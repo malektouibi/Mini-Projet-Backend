@@ -28,6 +28,13 @@ const ServiceUser = sequelize.define('ServiceUser', {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    role: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          isIn: [['admin', 'service user']]
+        }
+    }
 });
 
 module.exports = ServiceUser;
