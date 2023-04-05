@@ -10,6 +10,11 @@ const sequelize = new Sequelize(process.env.DB_URL, {
         rejectUnauthorized: false,
         },
     },
+    logging: false,
 });
+
+(async () => {
+    await sequelize.sync();
+})();
 
 module.exports = sequelize;

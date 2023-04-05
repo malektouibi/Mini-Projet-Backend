@@ -3,6 +3,11 @@ const sequelize = require('../config/sequelize');
 
 const ServiceUser = sequelize.define('ServiceUser', {
     // Column definitions
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    },
     firstName: {
         type: DataTypes.STRING,
         allowNull: false,
