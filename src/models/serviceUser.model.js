@@ -2,7 +2,6 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../config/sequelize');
 
 const ServiceUser = sequelize.define('ServiceUser', {
-    // Column definitions
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -35,6 +34,12 @@ const ServiceUser = sequelize.define('ServiceUser', {
           isIn: [['admin', 'service user']]
         }
     }
+}, {
+    defaultScope: {
+        attributes: {
+            exclude: ['password']
+        }
+    },
 });
 
 module.exports = ServiceUser;
