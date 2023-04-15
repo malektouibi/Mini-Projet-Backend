@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 const ServiceUser = require('../models/serviceUser.model')
 
 const getAllServiceUsers = async (req, res) => {
