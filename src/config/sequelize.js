@@ -6,9 +6,10 @@ const sequelize = new Sequelize(process.env.DB_URL, {
     protocol: process.env.DB_TYPE,
     dialectOptions: {
         ssl: {
-        require: true,
+        require: false,
         rejectUnauthorized: false,
         },
+        // ssl: false
     },
     logging: false,
 });
